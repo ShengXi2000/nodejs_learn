@@ -1,0 +1,35 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "main": "code/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "sears",
+    "email": "2766274062@qq.com",
+    "url": "http://shengxigridweb.com"
+  },
+  "contributes": {},
+  "homepage": "http://shengxigridweb.com",
+  "keywords": [
+    "email",
+    "demo",
+    "tutorial"
+  ],
+  "description": "我的nodejs学习代码",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "@types/inquirer": "^9.0.1",
+    "@types/node": "^18.7.16",
+    "chalk": "^5.0.1",
+    "cowsay": "^1.5.0",
+    "inquirer": "^9.1.1",
+    "minimist": "^1.2.6",
+    "progress": "^2.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  },
+  "type": "module"
+}
