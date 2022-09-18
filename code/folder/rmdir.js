@@ -1,7 +1,7 @@
 // fs.rmdir是删除文件夹
 import {rmdirSync, mkdirSync, existsSync, writeFileSync} from 'fs'
 import {join} from 'path'
-import fs from 'fs-extra'
+import fs, {remove} from 'fs-extra'
 
 const folderPath = 'C:/Users/1/Desktop/nodejs/code/folder/testFolder'
 
@@ -21,6 +21,7 @@ try {
   rmdirSync(folderPath)
   console.log(`删除文件夹成功`)
 } catch (error) {
+  // 因为其API不好删除带有数据的文件夹，所以会error
   console.log(`删除文件夹失败：${error}`)
 }
 
@@ -35,10 +36,21 @@ try {
 // }
 
 // 也可使用promise异步删除
-fs.remove(folderPath)
-  .then((res) => {
-    console.log(`删除完成`)
-  })
-  .catch((err) => {
-    console.error(`删除失败`)
-  })
+// fs.remove(folderPath)
+//   .then((res) => {
+//     console.log(`删除完成`)
+//   })
+//   .catch((err) => {
+//     console.error(`删除失败`)
+//   })
+// 或者使用async/await版本
+const rmFolder = async (folder) => {
+  try {
+    await remove(folder)
+    console.log(`删除文件夹成功`)
+  } catch (error) {
+    console.error(err)
+  }
+}
+
+rmFolder(folderPath)
